@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+        <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+        <title>Vision API Demo</title>
+
+
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-dark bg-danger mb-3">
+            <div class="container">
+                <a href="/" class = "navbar-brand">Vision API Demo</a>
+            </div>
+        </nav>
+
+        <div class="container searchContainer">
+            <br>
+                <div class="card card-body mb-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img-fluid mb-2" src="{{ url_for('static',filename='example.jpg') }}" width="500px" id="example">
+                        </div>                     
+                        <!-- <div class="col-md-9">
+                            {% if response %}
+                            <table border="1">      
+                                <tr>                                     
+                                <td>&nbsp</td> <td>SONUÇ</td>                                  
+                                </tr>
+                                {% for r in response %}                                        
+                                <tr>                                      
+                                <td>&nbsp</td><td>{{r.PrintLine()}}</td>,                               
+                                </tr>
+                                {% endfor %}                                            
+                            </table>
+                          {% endif %}        
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+        
+        <script type="text/javascript">
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#image_preview')
+                            .attr('src', e.target.result)
+                            .width(300)
+                            .height(300);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $('#image').change(function(){readURL(this);})
+        </script>
+    </body>
+</html>
+
