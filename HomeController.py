@@ -45,8 +45,9 @@ def static_file():
       cloud_manager=CloudStorageUploader('main-product-set-images')
       cloud_manager.UploadToBucket('api-imgs/deneme.jpg',YUKLEME_KLASORU+'/'+uploadFile.filename)
       response_api=requests.post(url="http://127.0.0.1:3005//api/v1/PostVision/")
+      print(response_api.content)
       
-    return app.send_static_file('product_detail3.html')
+    return app.send_static_file('product_detail3.html',response=response_api.content)
 
 if __name__=='__main__':
     app.run(port=3003,debug=True)
