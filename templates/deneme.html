@@ -116,10 +116,11 @@
 						<input type='file' onchange="readURL(this);" name="uploadFile" />
 						<img id="blah" src="http://placehold.it/180" alt="" />
                         <input type=submit value=Upload>                     
-                        {% endif %}                      
-                        <!-- {%if image %}
-                        <img width="250px" src="{{ image }}" />
-                        {%endif %}					 -->
+						{% endif %} 
+						<br>
+						<input type="text" name="barcod" placeholder="barcod">    
+						<input type="text" name="productName" placeholder="name">        
+						<input type=submit value="Find">         
                     </form>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
@@ -138,8 +139,8 @@
 						<p>{{response.description}}</p>
 						{% endif %}
 						<div class="product_count">
-							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-               class="reduced items-count" type="button"><i class="ti-angle-right"></i></button>
+							<!-- <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+               class="reduced items-count" type="button"><i class="ti-angle-right"></i></button> -->
 							<a class="button primary-btn" href="#">Add to Product</a>               
 						</div>
 					
